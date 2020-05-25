@@ -7,16 +7,6 @@ By the end of this tutorial you will have built a web app which will allow you t
 
 We have everything set up for you in a collection of CodePens. If you ever get lost or confused, you can take a look at the code pen with the solution for that step or just use it to go forward and follow along.
 
-Here are the CodePens for **future** reference (keep following along for now): 
-- [Step 0: Hello World!](https://codepen.io/kristinyim/pen/RvqKXV?editors=1010)
-- [Step 1: My First Meme](https://codepen.io/kristinyim/pen/BMGpBz?editors=1010)
-- [Step 2: The Meme Component](https://codepen.io/kristinyim/pen/MLzJgr?editors=1010)
-- [Step 3: The Mapping of the Memes](https://codepen.io/kristinyim/pen/jdQyVa?editors=1010)
-- [Step 4: Upvotes and downvotes](https://codepen.io/kristinyim/pen/daQNNy?editors=1010)
-- [Step 5: Setting state, onclicks](https://codepen.io/kristinyim/pen/bzQggR?editors=1010)
-- [Step 6: Adding New Memes](https://codepen.io/kristinyim/pen/JxeEEq?editors=1010)
-- [Step 7: LifeCycle & Component Did Update](https://codepen.io/kristinyim/pen/aXQpyx?editors=1010)
-
 # Quick Tour of Code Pen
 <img align="right" src="http://i.imgur.com/WzcOh9d.png" width="350px">
 
@@ -44,16 +34,16 @@ Let's go over how this works.
 First, checkout our 'App Component'
 
 ```javascript
-class App extends React.Component {
-  render() {
-    return (
-      <p>Hello World</p>
-    );
-  }
+import React from 'react';
+
+export default function App(props) { 
+  return (
+    <p>Hello World</p>
+  );
 }
 ```
 
-Components are the core of React. React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing ```React.Component``` as you see we do with ```extends React.Component```.
+Functional components are the core of React. React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. 
 
 _HTML TIP: `<p>` is for paragraphs_
 
@@ -85,6 +75,8 @@ React handles data through the state variable.  Each React component has its own
 
 Add this constructor inside of the App class! 
 ```js
+import React, { useState } from 'react';
+
 //constructor just like in java!
   //sets up initial state in this.state = 
   constructor(props) {
